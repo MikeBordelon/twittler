@@ -1,11 +1,8 @@
 
 
   $(document).ready(function(){
-    //creates a global variable for the visitor
-    window.streams.users.visitor = [];
-    window.users.push('visitor');
+    window.streams.users.visitor = [];//creates a global variable for the visitor
   
-  // It's a function that loads the 7 most recent tweets onto the divs
     var loadTweets = function(){
       var $body = $('#b');
       $body.html('');
@@ -16,8 +13,6 @@
       var $time = $('#time');
       $time.html('');
 
-     //adds a tweet to the div
-     // the count defines which div to add it to
       var appendTweet = function(){
         $body = $('#b' + count);
         var $tweet = $('<div></div>');
@@ -26,7 +21,6 @@
         $tweet.appendTo($body);
       };
 
-      // adds the handle the left of the div
       var appendHandle = function(){
         var $handlePlaced = $('<div></div>');
         $handle = $('#handle' + count);
@@ -35,11 +29,10 @@
         $handlePlaced.appendTo($handle);
       };
 
-      // adds the time-stamp
       var appendTime = function(){
         var $timePlaced = $('<div></div>');
         $time = $('#time' + count);
-        $timePlaced.text(moment().fromNow());
+        $timePlaced.text(moment().fromNow() );
         $time.empty();
         $timePlaced.appendTo($time);
       };
@@ -57,10 +50,10 @@
         count++;
         index -= 1;
       }
-  };
+  }
     loadTweets();    
 
-     //Uses the previous function to load the 7 most recent tweets.
+     //Load the last 7 tweets into the available divs
     $('button').on('click', function(){
       loadTweets();
     });
@@ -86,7 +79,7 @@
       $handlePlaced.appendTo($handle);
      
       var $timePlaced = $('<div></div>');
-      $timePlaced.text(moment().fromNow());
+      $timePlaced.text(moment().fromNow() );
       $timePlaced.appendTo($time);
 
       // places the tweet into the following locations. This lets us see the visitor's timeline
@@ -102,13 +95,16 @@
         user: 'visitor'
       });  
     };
-         
-    // finds the form, takes the text from within the text-box and makes it a variable for
-    // writeNewTweet.      
+          
     $( "form" ).submit(function( e ) {
-       var message = $('#textBox').val();
+       var message = $('#textBox').val(); 
        writeNewTweet(message);
-       e.preventDefault();// prevents the form from it's default action of submitting.    
+       if(e.keyCode == 13){
+        $('#post').click();
+        // $('#textBox').val() = ''
+        // $('#bVisitor').get(0).scrollIntoView();
+       }
+       e.preventDefault();    
     });
   
   //Load users tweets into the bottom div      
@@ -118,12 +114,12 @@
       var $body = $('.boxUser');
       $body.html('');
     
-      //iterate through the user tweets and put them on the div
-      userTweets.forEach(function(tweet,index){
+      //iterate through the user tweets and put the on the div
+      userTweets.forEach(function(obj,index){
         var $tweet = $('<div ></div>');
         var date = streams.users[username][index].created_at;
 
-        $tweet.text('@' + username + ' ' + tweet.message + ' ' + moment(date).fromNow());
+        $tweet.text( '@' + username + ' ' + obj.message + ' ' + moment(date).fromNow());
         $tweet.appendTo($body);
         
       });
