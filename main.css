@@ -1,0 +1,225 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+/*h1, h3, h4, h5, p {
+  margin-bottom: 22px;
+}*/
+
+body {
+	font-family: Helvetica. Arial	;
+}
+
+/*
+  ========================================
+  Twittler CSS Begins Here
+  ========================================
+*/
+
+.title {
+  color:#467cac;
+	margin: 10px 0px 0px 20px;
+	font-size: 25px;
+	font
+}
+
+#visitor {
+  margin: 0px 100px 0px 0px;  
+}
+
+
+.blueBar {
+  width: 750px;
+  background-color: #467cac;
+  margin: 40px auto 0px auto;
+}
+
+/*@visitor text*/
+.inputBox {
+  margin: 0px 0px 0px 200px;	
+  color: white;
+  font-size: 26px;
+ }
+
+/*text box*/
+ #textBox {
+  font-size:14pt; 
+  padding: 6px;
+  width:350px; 
+  height: 25px
+ }
+
+/*Post button*/
+ #post {
+  height: 40px;
+  width : 55px;
+  font-size:12pt;
+  color: white; 
+  background-color:#4fcf86; 
+  padding : 6px;
+
+ }
+
+#loadLastSeven {
+  margin: 0px 0px 0px 295px;
+  font-size: 16px
+}
+
+.background {
+  background-color: #f5f5f5;
+  height: 1000px;
+  width: 750px;
+  margin: 0px auto 0px auto;
+}
+
+.box1 {
+  float: right;
+  width: 500px;
+  height: 60px;
+  margin: 30px 30px 30px auto;
+  background-color: white;
+ }
+
+ #b1 {
+  margin: 0px 10 0 30px;
+  font-size: 20px;
+  color: #000000;
+}
+
+#handle1 {
+  float: left;
+  text-decoration: underline;
+  margin: 30px 0px 0px 60px;
+  font-size: 20px;
+  color: #000000;
+}
+
+#time1 {
+  clear : left;
+  margin: 0px 0px 0px 60px;
+}
+
+.box2,.box3,.box4,
+.box5,.box6,.box7,.boxVisitor {
+  float: right;
+  width: 500px;
+  height: 60px;
+  margin: 30px 30px 30px auto;
+  background-color: white;
+ }
+
+ #b2,#b3,#b4,#b5,#b6,#b7,#bVisitor {
+  margin: 0px 10 0px 30px;
+  font-size: 20px;
+  color: #000000;
+}
+
+#handle2,#handle3,#handle4,
+#handle5,#handle6,#handle7,#handleVisitor {
+  text-decoration: underline;
+  float: left;
+  margin: 85px 0px 0px 60px;
+  font-size: 20px;
+  color: #000000;
+}
+
+#time2,#time3,#time4,
+#time5,#time6,#time7,#timeVisitor {
+  clear : left;
+  margin: 0px 0px 0px 60px;
+}
+
+.boxUser {
+  float: right;
+  width: 650px;
+  height: 60px;
+  margin: 17px 0px 30px 300px;
+  background-color: white;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
