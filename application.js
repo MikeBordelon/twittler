@@ -4,17 +4,17 @@
     window.streams.users.visitor = [];//creates a global variable for the visitor
   
     var loadTweets = function(){
-      var $body = $('#b');
-      $body.html('');
+      // var $body = $('#b');
+      // $body.html('');
 
-      var $handle = $('#handle');
-      $handle.html('');
+      // var $handle = $('#handle');
+      // $handle.html('');
 
-      var $time = $('#time');
-      $time.html('');
+      // var $time = $('#time');
+      // $time.html('');
 
       var appendTweet = function(){
-        $body = $('#b' + count);
+        var $body = $('.b' + count);
         var $tweet = $('<div></div>');
         $tweet.text(tweet.message);
         $body.empty();
@@ -23,7 +23,7 @@
 
       var appendHandle = function(){
         var $handlePlaced = $('<div></div>');
-        $handle = $('#handle' + count);
+        var $handle = $('.handle' + count);
         $handlePlaced.text('@' + tweet.user );
         $handle.empty();
         $handlePlaced.appendTo($handle);
@@ -31,15 +31,15 @@
 
       var appendTime = function(){
         var $timePlaced = $('<div></div>');
-        $time = $('#time' + count);
+        var $time = $('.time' + count);
         $timePlaced.text(moment().fromNow() );
         $time.empty();
         $timePlaced.appendTo($time);
       };
 
+      
       var count = 1;
       var index = streams.home.length - 1;
-
       while(count <= 7){
         var tweet = streams.home[index];
 
@@ -61,14 +61,14 @@
     // Allow the visitor to tweet
     var writeNewTweet = function(message){
      
-      var $body = $('#bVisitor');
+      var $body = $('.bVisitor');
       $body.html('');
 
-      var $handle = $('#handleVisitor');
+      var $handle = $('.handleVisitor');
       $handle.html('');
       
-      var $time = $('#timeVisitor');
-      $time.html('');    
+      var $time = $('.time8');
+      $time.empty();    
       
       var $tweet = $('<div></div>');
       $tweet.text(message);
@@ -79,8 +79,17 @@
       $handlePlaced.appendTo($handle);
      
       var $timePlaced = $('<div></div>');
-      $timePlaced.text(moment().fromNow() );
+      $timePlaced.text( moment().fromNow() );
       $timePlaced.appendTo($time);
+
+      //  var appendTime = function(){
+      //   var $timePlaced = $('<div></div>');
+      //   var $time = $('.time' + count);
+      //   $timePlaced.text(moment().fromNow() );
+      //   $time.empty();
+      //   $timePlaced.appendTo($time);
+      // };
+
 
       // places the tweet into the following locations. This lets us see the visitor's timeline
       streams.users.visitor.push({
@@ -97,10 +106,10 @@
     };
           
     $( "form" ).submit(function( e ) {
-       var message = $('#textBox').val(); 
+       var message = $('.textBox').val(); 
        writeNewTweet(message);
        if(e.keyCode == 13){
-        $('#post').click();
+        $('.post').click();
         // $('#textBox').val() = ''
         // $('#bVisitor').get(0).scrollIntoView();
        }
