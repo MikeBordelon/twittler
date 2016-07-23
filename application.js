@@ -4,15 +4,7 @@
     window.streams.users.visitor = [];//creates a global variable for the visitor
   
     var loadTweets = function(){
-      // var $body = $('#b');
-      // $body.html('');
-
-      // var $handle = $('#handle');
-      // $handle.html('');
-
-      // var $time = $('#time');
-      // $time.html('');
-
+ 
       var appendTweet = function(){
         var $body = $('.b' + count);
         var $tweet = $('<div></div>');
@@ -30,16 +22,17 @@
       };
 
       var appendTime = function(){
+        var date = streams.home[index].created_at;
         var $timePlaced = $('<div></div>');
         var $time = $('.time' + count);
-        $timePlaced.text(moment().fromNow() );
+        $timePlaced.text( moment(date).fromNow() );
         $time.empty();
         $timePlaced.appendTo($time);
       };
 
       
       var count = 1;
-      var index = streams.home.length - 1;
+      var index = 0;
       while(count <= 7){
         var tweet = streams.home[index];
 
@@ -48,10 +41,12 @@
         appendTime();
         
         count++;
-        index -= 1;
+        index++;
       }
+      streams.home.splice(0,6)
   }
     loadTweets();    
+
 
      //Load the last 7 tweets into the available divs
     $('button').on('click', function(){
@@ -82,14 +77,6 @@
       $timePlaced.text( moment().fromNow() );
       $timePlaced.appendTo($time);
 
-      //  var appendTime = function(){
-      //   var $timePlaced = $('<div></div>');
-      //   var $time = $('.time' + count);
-      //   $timePlaced.text(moment().fromNow() );
-      //   $time.empty();
-      //   $timePlaced.appendTo($time);
-      // };
-
 
       // places the tweet into the following locations. This lets us see the visitor's timeline
       streams.users.visitor.push({
@@ -105,7 +92,7 @@
       });  
     };
           
-    $( "form" ).submit(function( e ) {
+    $( "form" ).submit(function(e) {
        var message = $('.textBox').val(); 
        writeNewTweet(message);
        if(e.keyCode == 13){
@@ -135,11 +122,17 @@
     
     };  
       
-    $('.background').on('click', '.handle p', function(event){
+    $('.background').on('click', '.handleBox p', function(){
       var username = $(this).text().slice(1);
       loadUserTweets(username);
       $('.boxUser').get(0).scrollIntoView();
-    });         
+    });  
+
+    $('.background').on('click', '.handle p', function(){
+      var username = $(this).text().slice(1);
+      loadUserTweets(username);
+      $('.boxUser').get(0).scrollIntoView();
+    });  
 });
         
       
